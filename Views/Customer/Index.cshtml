@@ -1,0 +1,206 @@
+﻿@model DomainCustomer.Entities.Customer
+@{
+    ViewBag.Title = "Área do Cliente";
+    Layout = "~/Views/Shared/Base/_LayoutBreadCrumbContent.cshtml";
+}
+
+@section breadcrumbs {
+    <div class="ui container">
+        <div class="ui one column grid stackable middle aligned">
+            <div class="row">
+                <div class="column">
+                    <h1>@ViewBag.Title</h1>
+                    <div class="ui breadcrumb text small">
+                        <a class="section" href="/">Home</a>
+                        <i class="right angle icon divider"></i>
+                        <a class="section">Área do Cliente</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="column">
+    <div class="ui grid stackable">
+
+        <div class="dados-client">
+            <h4>Olá, @Model.Name</h4>
+        </div>
+        
+        <div class="row one column">
+            <div class="column margin left large">
+                <div class="ui items very relaxed divided menuclient customerMenu">
+
+                    <div class="div itens estilo">
+                        <a class="" href="/Order/LastOrderDetail">
+                            <div class="content estilo title">
+                                <div class="icons-customer">
+                                    <i class="ui icon ultimo-pedido"></i>
+                                </div>
+                                <div class="div-estilo-description">
+                                    <div class="description">
+                                        <p class="subtitle estilo">Último</p>
+                                    </div>
+                                    <div class="header estilo">Pedido</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="div itens estilo">
+                        <a class="" href="~/Order/Index">
+                            <div class="content estilo title">
+                                <div class="icons-customer">
+                                    <i class="ui icon consulta-pedidos"></i>
+                                </div>
+                                <div class="div-estilo-description">
+                                    <div class="description">
+                                        <p class="subtitle estilo">Consultar</p>
+                                    </div>
+                                    <div class="header estilo">Pedidos</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    @if (Model.User.idTablePrice == 0)
+                    {
+                        <div class="div itens estilo">
+                            <a class="" href="~/EventList/Index">
+                                <div class="content estilo title">
+                                    <div class="icons-customer">
+                                        <i class="ui icon lista-eventos"></i>
+                                    </div>
+                                    <div class="div-estilo-description">
+                                        <div class="description">
+                                            <p class="subtitle estilo">Lista de</p>
+                                        </div>
+                                        <div class="header estilo">Eventos</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+
+                    <div class="div itens estilo">
+                        <a class="" href="/Customer/ShoppingVoucherDetails">
+                            <div class="content estilo title">
+                                <div class="icons-customer">
+                                    <i class="ui icon vale-compra"></i>
+                                </div>
+                                <div class="div-estilo-description">
+                                    <div class="description">
+                                        <p class="subtitle estilo">Vale</p>
+                                    </div>
+                                    <div class="header estilo">Compra</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    @{
+                        bool isb2b = Session["segment"] != null && Session["segment"].ToString() == "b2b" ? true : false;
+                        if (!isb2b)
+                        {
+                            <div class="div itens estilo">
+                                <a class="" href="/Customer/WishList">
+                                    <div class="content estilo title">
+                                        <div class="icons-customer">
+                                            <i class="ui icon lista-desejos"></i>
+                                        </div>
+                                        <div class="div-estilo-description">
+                                            <div class="description">
+                                                <p class="subtitle estilo">Lista de</p>
+                                            </div>
+                                            <div class="header estilo">Desejos</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        }
+                    }
+
+                    <div class="div itens estilo">
+                        <a class="" href="/Customer/Edit">
+                            <div class="content estilo title">
+                                <div class="icons-customer">
+                                    <i class="ui icon alterar-cadastro"></i>
+                                </div>
+                                <div class="div-estilo-description">
+                                    <div class="description">
+                                        <p class="subtitle estilo">Alterar</p>
+                                    </div>
+                                    <div class="header estilo">Cadastro</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="div itens estilo">
+                        <a class="" href="/Customer/changeAddress">
+                            <div class="content estilo title">
+                                <div class="icons-customer">
+                                    <i class="ui icon gestao-enderecos"></i>
+                                </div>
+                                <div class="div-estilo-description">
+                                    <div class="description">
+                                        <p class="subtitle estilo">Gestão de</p>
+                                    </div>
+                                    <div class="header estilo">Endereços</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="div itens estilo">
+                        <a class="" href="/customer/changepassword">
+                            <div class="content estilo title">
+                                <div class="icons-customer">
+                                    <i class="ui icon alt-senha"></i>
+                                </div>
+                                <div class="div-estilo-description">
+                                    <div class="description">
+                                        <p class="subtitle estilo">Alterar</p>
+                                    </div>
+                                    <div class="header estilo">Senha</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="div itens estilo">
+                        <a class="" href="/Customer/ChangeEmail">
+                            <div class="content estilo title">
+                                <div class="icons-customer">
+                                    <i class="ui icon alt-email"></i>
+                                </div>
+                                <div class="div-estilo-description">
+                                    <div class="description">
+                                        <p class="subtitle estilo">Alterar</p>
+                                    </div>
+                                    <div class="header estilo">E-mail</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="div itens estilo">
+                        <a class="" href="~/Order/ListRecurrentPurchase">
+                            <div class="content estilo title">
+                                <div class="icons-customer">
+                                    <i class="ui icon assinaturas"></i>
+                                </div>
+                                <div class="div-estilo-description">
+                                    <div class="description">
+                                        <p class="subtitle estilo">Minhas</p>
+                                    </div>
+                                    <div class="header estilo">Assinaturas</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>

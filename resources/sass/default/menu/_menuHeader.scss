@@ -1,0 +1,315 @@
+$menuBG: #fff;
+$menuTextColor:#000;
+$menuHeight: 50px;
+$menuHoverBorderColor: none;
+$colorLinkSubMenu: "#666";
+
+.menuheader {
+  background-color: $menuBG;
+  min-height: $menuHeight;
+  width: 100%;
+  
+  /*Sub Classes*/
+  .ui.menu {
+    background: transparent;
+    background-color: transparent;
+    border: 0px;
+    box-shadow: none;
+    display: flex;
+    font-weight: 400;
+    min-height: 2.85714286em;
+    flex-wrap: wrap;
+    margin:0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    li {
+      &:hover,
+      &.active,
+      &:focus {
+        box-shadow: inset 0 -5px 0 $menuHoverBorderColor;
+        }
+      > .item {
+        word-wrap: normal;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-transform: uppercase;
+          margin:0;
+          font-size: 14px;
+          line-height: $menuHeight; 
+          font-weight: 500 !important;
+            
+        
+        > .icon.dropdown {
+          line-height: 18px;
+          }
+        > .icon.content {
+          font-size: 12px;
+          font-size: .8rem;
+          line-height: 1;
+          margin-right: 15px;
+          }
+        .menu {
+          border-radius: 0px !important;
+          margin-top: 0px !important;
+          z-index: 10;
+          .item {
+            line-height: 18px;
+            &:hover,
+            &.active,
+            &:focus {
+              box-shadow: none !important;
+              font-weight: 700 !important;
+              }
+            }
+          .menu {
+            box-shadow: none;
+            }
+            
+          }
+        }
+      }
+      .header {
+        a {
+          color:$colorLinkSubMenu;
+          font-size:14px;
+        }
+      }
+    }
+  .ui.menu .item {
+    color: $menuTextColor;
+    line-height: $menuHeight;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    //font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+  .ui.menu .item:hover,
+  .ui.menu .item.active {
+    box-shadow: inset 0 -5px 0 $menuHoverBorderColor;
+    color: $menuTextColor;
+    font-weight: 700 !important;
+    }
+  .sub-megamenu {
+    .ui.link.list {
+      .item {
+        color: rgba(0, 0, 0, 0.7);
+        margin: 0.5em 0px;
+        padding-left: 10px;
+        }
+      }
+    }
+  .ui.menu > .item:first-child,
+  .ui.menu > .item:last-child {
+    border-radius: 0px;
+    }
+  .ui.list {
+    
+    h4 {
+      font-weight: normal;
+    }
+    .item {
+      color: rgba(0, 0, 0, .7);
+      padding-left: 10px !important;
+      &:hover,
+      &.active,
+      &:focus {
+        color: rgba(0, 0, 0, .9);
+        box-shadow: inset 5px 0 0 $menuHoverBorderColor;
+        transition: opacity 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .ui.menu .item:before {
+    position: absolute;
+    content: '';
+    top: 0%;
+    right: 0px;
+    height: 100%;
+    background: none;
+  }
+
+  ._header .cartbutton #total_itens_card {
+    position: relative;
+    bottom: 6px;
+    left: 16px;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    padding: 0 !important;
+    line-height: 16px !important;
+    font-size: 10px !important;
+    background: #fff !important;
+    border: 1px solid #000000;
+  }
+
+  .ui[class*="none"].label:before {
+    bottom: auto;
+    right: auto;
+    top: 50%;
+    left: 0em;
+  }
+
+/* Mega Menu Start */
+@import "wsmenu/style";
+/* MegaMenu End */
+
+
+.menuheader .ui.list .item.active,
+.menuheader .ui.list .item:focus,
+.menuheader .ui.list .item:hover {
+  color: #303030;
+}
+.megamenu .ui.grid.three.column {
+  max-width: unset;
+}
+.megamenu.clearfix {
+  @media (min-width: 768px){
+    max-width: 150px;
+  }
+}
+.megamenu {
+  border-top: 2px solid #303030 !important;
+  min-width: 350px;
+  border: 0;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  .item {
+    padding: 5px 15px;
+  }
+  .item,
+  .titulo {
+    font-weight: normal;
+    text-transform: capitalize;
+    font-size: 12.5px;
+    @media (min-width: 768px) {
+      color: #000 !important;
+      display: block;
+
+    }
+
+    @media (max-width: 768px) {
+      color: white !important;
+      text-transform: uppercase;
+    }
+    &:hover {
+      @media (min-width: 768px) {
+        color: #000 !important;
+      }
+
+      @media (max-width: 768px) {
+        color: white !important;
+      }
+      text-decoration: underline;
+    }
+  }
+}
+.segundo-nivel {
+  padding: 0 !important;
+  & > .ui.list {
+    padding: 15px;
+    &:hover {
+      .titulo {
+        text-decoration: underline;
+      }
+      .terceiro-nivel {
+        display: block;
+      }
+    }
+    .terceiro-nivel {
+      position: absolute;
+      background: #eeeeee;
+      left: 100%;
+      top: 20px;
+      display: none;
+      padding: 5px 15px;
+    }
+  }
+}
+
+
+.topo-fixo {
+  display: none !important;
+
+  .topbar{
+    border: 0;
+  }
+  .mobile.hide.ui.left.floated.aligned.column.margin.none {
+    opacity: 0;
+  }
+}
+
+.topo-fixo.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  display: block !important;
+  
+  @media (min-width: 768px){
+    display: block !important;
+  }
+
+  ._header {
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.3);
+  }
+
+  .wsmenu{
+    margin: 0;
+  }
+
+  .logo {
+    width: 80%;
+
+    @media (min-width: 768px){
+      width: 60%;
+    }
+  }
+
+  
+
+  .ui.grid > .row {
+    padding-top: 0rem; 
+    padding-bottom: 0rem; 
+  }
+
+  .menuheader .ui.menu li > .item {
+    font-size: 12px;
+    font-weight: 400 !important;
+  }
+
+  .menuheader .ui.menu li > .item:hover {
+    font-size: 12px;
+    font-weight: 600 !important;
+  }
+
+  i {
+    width: 20px !important;
+  }
+
+  .ui.list:last-child {
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+  }
+}
+
+.pusher > .ui.container.fluid.menuheader {
+  @media (max-width: 768px){
+    display: none !important;
+  }
+}
+
+
+.wsmenu-client {
+  text-align: left;
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+  background-color: #f4f4f4;
+  font-size: 16px !important;
+  text-transform: uppercase;
+
+  a {
+    margin-left: 8px;
+  }
+}
+

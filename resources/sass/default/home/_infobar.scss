@@ -1,0 +1,91 @@
+.infoBar {
+	text-transform: uppercase;
+	border-bottom: 1px solid #EEEEEE;
+	margin-bottom: 80px;
+
+	h3 {
+		margin-bottom: 0;
+		font-weight: bold;
+		color: $primary-color;
+		font-size: 14px;
+	}
+
+	.icon_place {
+	  float: left;
+	  width: 40px;
+	  height: 100%;
+	  margin-right: 8px;
+	  margin-bottom: 10px;
+
+	  .icon {
+		font-size: 32px;
+		line-height: 65px;
+		float: left;
+		height: 100%;
+			color:$primary-color;
+	  }
+	}
+
+	.text_place {
+	  float: left;
+	  margin-left: 10px;
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+	  font-size: 12px;
+	  color:#666;
+	  line-height: initial;
+
+		@media screen and (max-width: $mobile-bp) {
+			margin-bottom: 0;
+			margin-top: 0;
+			display: none;
+		}
+	}
+
+	.row {
+	  padding: 0px !important;
+	}
+
+	.ui.grid {
+	  margin: 0px !important;
+	}
+}
+
+.entrega {
+	padding: 0;
+	margin: 0 !important;
+	width: 50px !important;
+	height: 50px !important;
+	background: url(/assets/image/icons/info-bar/shipping.svg) center no-repeat;
+	background-size: contain;
+	color: transparent;
+	text-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.cartao-credito {
+	padding: 0;
+	margin: 0 !important;
+	width: 50px !important;
+	height: 50px !important;
+	background: url(/assets/image/icons/info-bar/credit-card.svg) center no-repeat;
+	background-size: contain;
+	color: transparent;
+	text-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.seguranca {
+	padding: 0;
+	margin: 0 !important;
+	width: 50px !important;
+	height: 50px !important;
+	background: url(/assets/image/icons/info-bar/lock.svg) center no-repeat;
+	background-size: contain;
+	color: transparent;
+	text-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}

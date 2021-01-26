@@ -1,0 +1,124 @@
+.topbar {
+  border-bottom: 1px solid #EEEEEE;
+  color: #303030;
+  height: 30px;
+  margin: 6px auto 0;
+
+
+  .list {
+
+    line-height: initial;
+
+    >.item {
+      padding-top:0 !important;
+      padding-bottom:0 !important;
+      line-height: initial !important;
+
+      i {
+        font-size:23px;
+      }
+
+      a {
+        color:#303030;
+        font-size:13px;
+        text-transform: uppercase;
+      }
+
+    }
+
+
+
+    span.text,
+    .menu {
+      @media screen and (max-width: $mobile-bp) {
+        display: none;
+      }
+    }
+  }
+
+  .ui.pointing.dropdown {
+
+    > .menu::after {
+      background: #1b1c1d;
+    }
+  }
+
+  .ui.grid > .row {
+    padding: 0.2em 0em;
+  }
+
+  socialbar {
+
+    .fa {
+      margin-right: 5px;
+    }
+
+    i{
+      font-size: 20px;
+      line-height: 0.95em;
+
+      &.facebook.icon {
+        color: #303030 !important;
+      }
+      &.instagram.icon {
+        color: #303030 !important;
+      }
+      &.twitter.icon {
+        color: #303030 !important;
+      }
+      &.youtube.icon {
+        color: #303030 !important;
+      }
+      &.google.icon {
+        color: #303030 !important;
+      }
+    }
+
+  }
+}
+
+.phone-contact {
+  padding: 0;
+  margin: 0 !important;
+  width: 18px !important;
+  height: 18px !important;
+  background: url(/assets/image/icons/top-bar/phone.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.user-login {
+  padding: 0;
+  margin: 0 !important;
+  width: 18px !important;
+  height: 18px !important;
+  background: url(/assets/image/icons/top-bar/user.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.assisted-sale {
+  padding: 0;
+  margin: 0 !important;
+  width: 18px !important;
+  height: 18px !important;
+  background: url(/assets/image/icons/top-bar/rocket.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.ui.divided.horizontal.list > .item {
+  border-top: none;
+  border-left: none;
+  margin: 0em;
+  line-height: 0.6;
+}

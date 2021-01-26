@@ -1,0 +1,22 @@
+@if ((Session["UserAuthenticated"] == null || (Convert.ToBoolean(Session["Guest"]) == true)) && Session["Seller"] == null)
+{
+    <div class="user">
+        <a href="/customer" class="item" title="Minha Conta">Entrar</a>
+        <a href="/order" class="item" title="Meus Pedidos">Meus Pedidos</a>
+        <a href="/customer" class="item cadastrar" title="Cadastrar">Cadastre-se</a>
+    </div>
+}
+@if ((Session["UserAuthenticated"] != null) && (Convert.ToBoolean(Session["Guest"]) == false))
+{
+    var userAuthenticated = (DomainCustomer.Entities.Customer)Session["UserAuthenticated"];
+
+    Char delimiter = ' ';
+    String[] nickName = userAuthenticated.Name.Split(delimiter);
+
+    <div class="user">
+        <span class="text">Ol&#225; <span id="userNameCommon">@nickName[0]</span></span>
+        <a href="/customer" class="item" title="Minha Conta">Minha Conta</a>
+        <a href="/order" class="item" title="Meus Pedidos">Meus Pedidos</a>
+        <a href="/customer/logout" class="item" title="Sair">Sair</a>
+    </div>
+}

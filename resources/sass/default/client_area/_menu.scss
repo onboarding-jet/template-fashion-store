@@ -1,0 +1,222 @@
+.menuclient {
+  .item {
+    .ui.icon {
+      margin-right: 20px;
+    }
+  }
+
+  &.customerMenu {
+
+    .div.estilo.itens {
+      margin-right: 2%;
+      width: 17%;
+      height: 80px;
+      float: left;
+      margin-bottom: 3%;
+      border-radius: 7px;
+      border: 1px solid #dfe0e0;
+
+      .icons-customer {
+        display: block;
+      }
+    }
+  }    
+
+      .ui.icon {
+        @media screen and (max-width: $tablet-bp-min) {
+          margin-right: 0px !important;
+          margin-bottom: .5em !important;
+        }
+      }
+      .content {
+
+        .div-estilo-description {
+          margin-left: 1.2em;
+        }
+
+        .header {
+          font-size: 22px;
+        }
+
+        .subtitle {
+          font-size: 13px !important;
+        }
+
+      }     
+    }
+
+
+.ui.menu .dropdown.item:hover,
+.ui.menu .link.item:hover,
+.ui.menu a.item:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.95);
+}
+
+.dados-client {
+  width: 100%;
+  display: block;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+
+  h4 {
+    font-size: 22px;
+  }
+}
+
+.menuclient.customerMenu .div.estilo.itens:hover {
+  border: 1px solid #000000;
+}
+
+.content.estilo.title {
+  color: #000000;
+  padding: 1em 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.alt-senha {
+  padding: 0;
+  margin: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: url(/assets/image/icons/client-area/lock.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.alt-email {
+  padding: 0;
+  margin: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: url(/assets/image/icons/client-area/email.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.lista-desejos {
+  padding: 0;
+  margin: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: url(/assets/image/icons/client-area/heart.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.ultimo-pedido {
+  padding: 0;
+  margin: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: url(/assets/image/icons/client-area/last-order.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.gestao-enderecos {
+  padding: 0;
+  margin: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: url(/assets/image/icons/client-area/location.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.ultimo-pedido {
+  padding: 0;
+  margin: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: url(/assets/image/icons/client-area/last-order.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.consulta-pedidos {
+  padding: 0;
+  margin: 0 !important;
+  width: 43px !important;
+  height: 43px !important;
+  background: url(/assets/image/icons/client-area/orders.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.alterar-cadastro {
+  padding: 0;
+  margin: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: url(/assets/image/icons/client-area/user-edit.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.vale-compra {
+  padding: 0;
+  margin: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: url(/assets/image/icons/client-area/tag.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.assinaturas {
+  padding: 0;
+  margin: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: url(/assets/image/icons/client-area/tasks.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.lista-eventos {
+  padding: 0;
+  margin: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: url(/assets/image/icons/client-area/calendar.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}

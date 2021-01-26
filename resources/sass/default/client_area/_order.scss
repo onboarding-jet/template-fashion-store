@@ -1,0 +1,89 @@
+.searchOrder {
+  @media only screen and(max-width: $mobile-bp) {
+    float:left
+  }
+}
+
+.dadosPedido {
+  .ui.steps {
+    .step {
+      @media only screen and(max-width: $tablet-bp-max) {
+        font-size: 0.78571429rem;
+        
+      }
+    
+      .description {
+        max-width: 230px;
+        @media only screen and(max-width: $tablet-bp-max) {
+          max-width: 150px;
+        }
+      }
+    }
+  } 
+  
+  .nomeProduto {
+    color:$black;
+    h1 {
+      font-size: 20px; 
+    }    
+  }
+}
+
+
+.ui.steps {
+  .step.active {
+    .title {
+      color: $black;
+    }
+  }
+}
+
+.ui.list > .item > .column {
+    display: inline-block;
+}
+.ui.list > .item > .column:first-child {
+    margin-right: 2em;
+}
+
+.ui.list > .item > .column > h5 {
+    margin: 1em 0em 1em;
+}
+
+.ui.list > .item > .column > .item > i.icon {
+    display: table-cell;
+    margin: 0em;
+    padding-top: 0em;
+    padding-right: 0.28571429em;
+    vertical-align: top;
+    -webkit-transition: color 0.1s ease;
+    transition: color 0.1s ease;
+}
+
+.ui.list > .item > .column > .item > .icon + .content {
+    display: table-cell;
+    padding: 0em 0em 0em 0.5em;
+    vertical-align: top;
+}
+
+.ui.small.button {
+  background-color: #767676;
+  color: #FFFFFF;
+  text-shadow: none;
+  background-image: none;
+}
+
+.ui.small.button {
+  background-color: #fff;
+  border: 1px solid #303030;
+  color: #303030;
+  text-shadow: none;
+  background-image: none;
+  -webkit-box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+          box-shadow: 0px 0em 0px 0px rgba(34, 36, 38, 0.15) inset;
+}
+
+.ui.small.button:hover {
+  background-color: #303030;
+  color: #FFFFFF;
+  text-shadow: none;
+}

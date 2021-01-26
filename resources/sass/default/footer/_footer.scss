@@ -1,0 +1,474 @@
+.newsletter-bar {
+	padding-bottom: 10px;
+	background: #fff;
+	position: relative;
+	margin-top: 40px;
+	margin-bottom: 60px;
+
+	h4.header {
+		color: #303030;
+		font-size: 18px;
+		font-weight: 700;
+		text-transform: uppercase;
+		padding-right: 15px;
+		margin: 0;
+		float: left;
+		line-height: 40px;
+
+		@media screen and (max-width: $mobile-bp) {
+			border:0;
+			padding-right: 0;
+		}
+	}
+
+	span.text {
+		color: #999;
+		font-size: 12px;
+	}
+
+
+	.inline.fields {
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+
+		.field {
+			@media screen and (max-width: $mobile-bp) {
+				padding-right: 0 !important;
+			}
+		}
+
+	}
+
+
+	.inline {
+		>.icon.input {
+			@media screen and (max-width: $mobile-bp) {
+				display:table;
+			}
+		}
+
+		.textNews {
+			@media screen and (min-width: $tablet-bp-min) and (max-width: $tablet-bp-max) {
+				max-width: 180px;
+
+			}
+
+			@media screen and (max-width: $mobile-bp) {
+				margin: 10px auto !important;
+				padding:0 !important;
+			}
+		}
+
+		#email_news {
+			background: #fff;
+			font-size: 12px;
+			color: #666666;
+
+
+			@media screen and (max-width: $mobile-bp) {
+				max-width: 200px;
+
+			}
+
+
+		}
+
+		i.mail.icon {
+			color: $secondary-color;
+			opacity: 1 !important;
+
+			@media screen and (max-width: $mobile-bp) {
+				top: 16px;
+				height:initial;
+			}
+		}
+
+		#btn_news {
+			margin-left: 5px;
+			text-transform: uppercase;
+			font-size: 13px;
+
+			@media screen and (max-width: $mobile-bp) {
+				width: 100%;
+				margin:0 auto;
+			}
+		}
+
+
+	}
+
+}
+
+.footer-wrap{
+	position: absolute;
+	bottom: 0px;
+}
+
+.ui.container.fluid.vertical.segment.footer {
+	width: auto !important;
+	margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.footer {
+    background-color: #f4f4f4 !important;
+	padding-bottom: 20px !important;
+	padding-left: 100px !important;
+
+    > .ui.container {
+		width: auto !important;
+
+        > .ui.grid {
+            > .column {
+                padding-bottom: 0 !important;
+            }
+        }
+    }
+
+    .listMobile {
+        .column {
+            @media screen and (max-width: $mobile-bp) {
+                border-bottom: 1px solid lighten($secondary-color, 10);
+            }
+        }
+    }
+
+    .header {
+        text-transform: uppercase;
+        font-size: 14px !important;
+        margin: 0;
+
+        @media screen and (max-width: $mobile-bp) {
+            line-height: 30px;
+        }
+
+        i.icon:only-child {
+            display: none;
+            float: right !important;
+            font-size: 1em;
+        }
+    }
+
+
+    socialbar {
+        margin-top: 10px;
+        display: inline-block;
+
+        a {
+            i.icon {
+                font-size: 24px !important;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .list {
+        &.link {
+            a,
+            h5 {
+                color: #505050 !important;
+                font-size: 12px;
+                font-weight: bold;
+                margin: 0;
+                line-height: 20px;
+
+                &:hover,
+                &:focus,
+                &:checked,
+                &:active {
+                    color: #000 !important;
+                }
+            }
+
+            @media screen and (max-width: $mobile-bp) {
+                padding: 1em;
+                text-align: left !important;
+                margin: 10px 0 0 0;
+                display: none;
+                background: lighten($secondary-color, 5);
+            }
+        }
+
+        &.selos {
+            margin-top: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            @media screen and (min-width: $mobile-bp) {
+                justify-content: flex-start;
+            }
+
+            a {
+                margin: 5px;
+                &#seloEconfy {
+                    position: relative !important;
+                }
+            }
+        }
+
+
+
+        &.selos a img {
+            max-height: 100px;
+            display: inline-block;
+            background-size: cover;
+        }
+    }
+
+    p {
+        color: #303030;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    h4,
+    h5 {
+        font-weight: bold;
+        font-size: 16px;
+        color: #303030;
+    }
+
+    .tireDuvidas {
+        background: #fff;
+
+        h5 {
+            color: $black;
+            margin: 0;
+            font-size: 1rem;
+        }
+    }
+
+
+    .ui.form {
+
+
+        > .inline {
+            > .icon.input {
+                @media screen and (max-width: $mobile-bp) {
+                    display: table;
+                }
+
+                .mail {
+                    color: $black;
+                    opacity: 1 !important;
+
+                    @media screen and (max-width: $mobile-bp) {
+                        top: 22px;
+                        height: initial;
+                    }
+                }
+
+                #email_news {
+                    @media screen and (max-width: $mobile-bp) {
+                        width: 100%;
+                    }
+                }
+
+                #btn_news {
+                    margin-left: 5px;
+                    color: #000;
+                    text-transform: uppercase;
+                    background: #fff;
+
+                    @media screen and (max-width: $mobile-bp) {
+                        width: 100%;
+                        margin: 5px auto 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.subFooter {
+	background-color: #303030;
+
+	@media screen and (max-width: $mobile-bp) {
+		text-align: center;
+	}
+
+	.menu_subfooter {
+		margin-bottom: 1em;
+
+		a.submenu {
+			padding: .42857143em 0.84285714em;
+			color: white;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.textoEmpresa {
+		text-align: center;
+
+		>h6 {
+			color:#fff;
+			font-size:12px;
+			font-weight: normal;
+			margin:0 0 10px 0;
+			display: inline-block;
+		}
+		> address {
+			color:#fff;
+			font-size:12px;
+			font-weight: normal;
+			font-style: normal;
+			display: inline-block;
+		}
+	}
+
+	.ui.tiny.images {
+		@media screen and (max-width: $mobile-bp) {
+			text-align: center;
+		}
+	}
+
+
+}
+
+.jetBrand{
+	height: 35px;
+	text-align: center;
+	padding: 0px !important;
+	background: black !important;
+
+	img{
+		height: 25px;
+		margin:5px;
+	}
+}
+#seloEbit{
+	display: inline-block !important;
+	width:84px;
+	@media screen and (max-width: $mobile-bp) {
+		float:none;
+		margin: 0;
+		width: auto;
+	}
+
+}
+#jetLogo {
+	height: 57px;
+
+	.st0 {
+		fill: rgba(255, 255, 255, 1);
+
+	}
+
+	.st1 {
+		fill: rgba(255,0, 0, 1);
+	}
+
+	.st2 {
+		fill: #000;
+	}
+}
+
+.emailNews {
+	width: 50% !important;
+    margin: auto;
+	text-align: center;
+}
+
+.emailNews {
+	@media screen and (max-width: $mobile-bp){
+		width: 100% !important;
+	  }
+}
+
+.newsletter-bar .titleNews {
+    text-transform: uppercase;
+    color: #303030;
+    text-align: center;
+    display: block;
+    font-size: 18px;
+	letter-spacing: 2px;
+}
+
+.newsletter-bar .info {
+    color: #303030;
+    display: block;
+    font-size: 14px;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.mail-newsletter {
+	padding: 0;
+	margin: 0 !important;
+	width: 35px !important;
+	height: 35px !important;
+	background: url(/assets/image/icons/mail.svg) center no-repeat;
+	background-size: contain;
+	color: transparent;
+	text-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+  }
+
+.ui.inverted.header {
+    color: #303030;
+}
+
+.centraliza {
+	width: 60%;
+    margin: auto;
+	text-align: center;
+}
+
+@media screen and (max-width: $mobile-bp) {
+	.footer .listMobile .column {
+	  border-bottom: 1px solid #303030;
+	}
+  }
+
+@media screen and (max-width: $mobile-bp) {
+	.footer .list.link {
+	  padding: 1em;
+	  text-align: left !important;
+	  margin: 10px 0 0 0;
+	  display: none;
+	  background: #f4f4f4;
+	}
+  }
+
+.subFooterEmpresa {
+	padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.scrollToTopButton {
+	position: fixed;
+    z-index: 9999;
+    width: 35px;
+    height: 35px;
+    background: url(/assets/image/icons/backTop.svg) center no-repeat;
+    background-size: contain;
+    bottom: 100px;
+    right: 28px;
+    text-align: center;
+    line-height: 44px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+
+    span {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+    }
+
+}
+
+.mobile-selos {
+	margin-bottom: 40px !important;
+    margin-top: 30px !important;
+}

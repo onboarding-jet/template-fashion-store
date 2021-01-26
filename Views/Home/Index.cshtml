@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = string.IsNullOrEmpty(LojaCorp.Control.Company._Company.Title) ? LojaCorp.Control.Company._Company.NameStore : LojaCorp.Control.Company._Company.Title;
+    Layout = "~/Views/Shared/Base/_Layout.cshtml";
+}
+
+<!-- ~/Views/Shared/Blocks/Banner/_FullBanner.cshtml -->
+@Html.Action("FullBanner", "Banner")
+
+<!-- ~/Views/Shared/Blocks/_InfoBar.cshtml -->
+@Html.Partial("Blocks/_InfoBar")
+
+<div class="featuredProducts">
+    <!-- ~/Views/Shared/Blocks/Product/_FeaturedProducts.cshtml -->
+    @Html.Action("FeaturedProducts", "Product")
+</div>
+
+<!-- ~/Views/Shared/Blocks/_CentralHalfBanner.cshtml -->
+@Html.Action("CentralHalfBanner", "Banner")
+
+<!-- ~/Views/Shared/Blocks/Group/_Groups.cshtml -->
+@Html.Action("Group", "Group")
+
+<!-- ~/Views/Shared/Blocks/_TopSellers.cshtml -->
+@Html.Action("TopSellers", "Product")
+
+<!-- ~/Views/Shared/Blocks/Banner/_FooterHalfBanner.cshtml -->
+@Html.Action("FooterHalfBanner", "Banner")
+
+<!-- ~/Views/Shared/Blocks/Brand/_Brands.cshtml -->
+@Html.Action("Brand", "Product")
+
+<!-- Exit Intent Popup -->
+<script type="text/javascript">
+    bioEp.init({
+        html: '<div id="bio_ep_content">' +
+                '<span>Fique por dentro!</span>' +
+                '<span>Deixe o seu e-mail abaixo e receba um e-mail sempre que tivermos lançamentos, novidades e cupons!</span>' +
+                '<div class="field" style="padding-bottom: 10px;">' +
+                    '<div class="ui input emailNews">' +
+                        '<input type="text" placeholder="Insira seu e-mail" id="email_news">' +
+                    '</div>' +
+                '</div>' +
+                '<div class="field">' +
+                    '<button class="ui inverted button" id="btn_news">Cadastrar</button>' +
+                '</div>' +
+                '</div>',
+        css: '#bio_ep {width: 600px; height: 300px; color: #303030; background-color: #f4f4f4; text-align: center;}' +
+                '#bio_ep_content {padding: 80px 30px;}' +
+                '#bio_ep_content span:nth-child(1) {display: block; color: #303030; font-size: 20px; padding-bottom: 10px;  }' +
+                '#bio_ep_content span:nth-child(2) {display: block; color: #303030; font-size: 16px; padding-bottom: 20px; }',
+        cookieExp: 0
+    });
+</script>

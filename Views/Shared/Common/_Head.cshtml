@@ -1,0 +1,344 @@
+﻿@{
+  string _classSearch = Session["idEventList"] == null ? "search" : "filterListEventsProducts";
+  string _classMiniCart = Session["idEventList"] == null && Session["EventList"] == null ? "mini-cart" : "mini-cart-list-event";
+}
+
+<div class="ui container fluid _header">
+    <div class="ui container">
+        <div class="ui middle aligned four column centered grid">
+            <div class="row">
+
+                <div class="ui center aligned four wide tablet five wide computer column searchcolumn" style="padding-left: 50px !important; padding-right: 30px !important;">
+                    <div class="ui category @_classSearch">
+                        <div class="ui icon input fluid">
+                            <input class="prompt" type="text" placeholder="Buscar..." style="border: none;">
+                            <i class="search icon"></i>
+                        </div>
+                        <div class="results"></div>
+                    </div>
+                </div>
+
+                
+                @if (Request.Browser.IsMobileDevice) {
+                    <div class="ui center aligned two wide mobile six wide tablet six wide computer column" style="right: 40px;">
+                        @Html.Action("Menu", "Home")
+                    </div>
+                }
+                
+                <div class="ui center aligned eight wide mobile six wide tablet six wide computer column">
+                    <a href="/Home" title="Página Inicial">
+                        <img class="ui middle aligned image logo" src="/assets/image/logo/logo.png" alt="@LojaCorp.Control.Company._Company.FantasyName" title="@LojaCorp.Control.Company._Company.FantasyName">
+                    </a>
+                </div>
+                
+                @{
+                    bool isb2b = Session["segment"] != null && Session["segment"].ToString() == "b2b" ? true : false;
+                    DomainAssistedSale.Entities.Seller _assistedSale = (DomainAssistedSale.Entities.Seller)Session["Seller"];
+                    bool isAssistedSale = _assistedSale != null ? true : false;
+
+                    if (!isb2b && !isAssistedSale) 
+                    {
+                        if (!Request.Browser.IsMobileDevice) {
+                        <div class="ui right aligned one wide mobile three wide tablet three wide computer column">
+                            <div>
+                                <a href="/Customer/WishList"><i class="wishlist-heart" style="position: absolute;"></i></a>
+                                @{
+                                    if (Request.Cookies["WishList"] == null)
+                                    {
+                                        @Html.Action("LoadWishListCookie", "Customer")
+                                    }
+
+                                    List<DomainCustomer.Entities.Wishlist.WishlistItem>
+                                        wishList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DomainCustomer.Entities.Wishlist.WishlistItem>>(Request.Cookies["WishList"] != null ? HttpUtility.UrlDecode(Request.Cookies["WishList"].Value) : string.Empty);
+                                    int wishListItemsCount = wishList != null ? wishList.Count() : 0;
+                                }
+                                <a style="background: transparent" id="wishListCount" href="/Customer/WishList" class="ui circular label"></a>
+                            </div>
+                        </div>
+                        }
+                    }
+                }
+
+                <div class="ui left aligned one wide mobile one wide tablet one wide computer column">
+                    <div class="headerbar__user" title="Área do Cliente">
+                        <i class="user-login icon"></i>
+                        <div class="headerbar__dropdown">
+                            @Html.Partial("Common/_User") 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui left aligned two wide mobile one wide tablet one wide computer column">
+                    <div id="cartButton" class="ui labeled cartbutton no margin bottom @_classMiniCart" tabindex="0" data-segment="@(Session["segment"] != null ? Session["segment"] : "b2c")">
+                        <a>
+                            <i class="shopping-bag" style="position: absolute;"></i>
+                            <span>@(Session["idEventList"] == null && Session["EventList"] == null ? "" : "")</span>
+                        </a>
+                        <a class="ui circular label" id="total_itens_card"></a>
+                    </div> 
+                </div>
+
+                <div class="ui searchMobile mobile only">
+                    <div class="ui button icon centered">
+                        <i class="search icon"></i>
+                    </div>
+                    <div class="ui blocoBusca @_classSearch">
+                        <div class="ui input fluid blocoBuscaContainer">
+                            <input class="prompt" type="text" placeholder="Buscar...">
+                            <i class="search icon search-results"></i>
+                            <i class="close icon disabled" id="closeResultsMobile"></i>
+                        </div>
+                        <div class="results"></div>
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="topo-fixo">
+        <div class="ui container fluid _header">
+            <div class="ui container">
+                <div class="ui middle aligned four column centered grid">
+                    <div class="row">
+
+                    @if (!Request.Browser.IsMobileDevice) {
+    
+                    
+
+                    <div class="ui left aligned six wide mobile six wide tablet three wide computer column">
+                        <a href="/Home" title="Página Inicial">
+                            <img class="ui middle aligned image logo" src="/assets/image/logo/logo.png" alt="@LojaCorp.Control.Company._Company.FantasyName" title="@LojaCorp.Control.Company._Company.FantasyName">
+                        </a>
+                    </div>
+                        
+                    <div class="ui center aligned six wide mobile six wide tablet nine wide computer column">
+                        @Html.Action("Menu", "Home")
+                    </div>
+                        
+                    if (!isb2b && !isAssistedSale) 
+                    {
+                        <div class="ui right aligned one wide mobile three wide tablet one wide computer column">
+                            <div>
+                                <a href="/Customer/WishList"><i class="wishlist-heart" style="position: absolute;"></i></a>
+                                @{
+                                    if (Request.Cookies["WishList"] == null)
+                                    {
+                                        @Html.Action("LoadWishListCookie", "Customer")
+                                    }
+
+                                    List<DomainCustomer.Entities.Wishlist.WishlistItem>
+                                        wishList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DomainCustomer.Entities.Wishlist.WishlistItem>>(Request.Cookies["WishList"] != null ? HttpUtility.UrlDecode(Request.Cookies["WishList"].Value) : string.Empty);
+                                    int wishListItemsCount = wishList != null ? wishList.Count() : 0;
+                                }
+
+                                <a style="background: transparent" id="wishListCount" href="/Customer/WishList" class="ui circular label"></a>
+                                
+                            </div>
+                        </div>
+                    }
+                        
+                    <div class="ui left aligned one wide mobile one wide tablet one wide computer column">
+                        <div class="headerbar__user" title="Área do Cliente">
+                            <i class="user-login icon"></i>
+                            <div class="headerbar__dropdown">
+                                @Html.Partial("Common/_User") 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui left aligned three wide mobile one wide tablet one wide computer column">
+                        <div id="cartButton" class="ui labeled cartbutton no margin bottom @_classMiniCart" tabindex="0" data-segment="@(Session["segment"] != null ? Session["segment"] : "b2c")">
+                            <a>
+                                <i class="shopping-bag" style="position: absolute;"></i>
+                                <span>@(Session["idEventList"] == null && Session["EventList"] == null ? "" : "")</span>
+                            </a>
+                            <a class="ui circular label" id="total_itens_card" style="visibility: hidden;"></a>
+                        </div>
+                    </div>
+                    }
+                
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+@* @{
+  string _classSearch = Session["idEventList"] == null ? "search" : "filterListEventsProducts";
+  string _classMiniCart = Session["idEventList"] == null && Session["EventList"] == null ? "mini-cart" : "mini-cart-list-event";
+}
+<div class="ui container fluid _header">
+    <div class="ui container">
+        <div class="ui middle aligned four column centered grid">
+            <div class="row">
+
+                <div class="ui center aligned four wide mobile six wide tablet nine wide computer column menuMobile">
+                        @Html.Action("Menu", "Home")
+                </div>
+
+                <div class="ui center aligned four wide tablet five wide computer column searchcolumn" style="padding-left: 50px !important; padding-right: 30px !important;">
+                    <div class="ui category @_classSearch">
+                        <div class="ui icon input fluid">
+                            <input class="prompt" type="text" placeholder="Buscar..." style="border: none;">
+                            <i class="search icon"></i>
+                        </div>
+                        <div class="results"></div>
+                    </div>
+                </div>
+
+                <div class="ui center aligned five wide mobile three wide tablet five wide computer column">              
+                    <a href="/Home" title="Página Inicial">
+                        <img class="ui middle aligned image logo" src="/assets/image/logo/logo.png" alt="@LojaCorp.Control.Company._Company.FantasyName" title="@LojaCorp.Control.Company._Company.FantasyName">
+                    </a>
+                </div>
+
+                @{
+                    bool isb2b = Session["segment"] != null && Session["segment"].ToString() == "b2b" ? true : false;
+                    DomainAssistedSale.Entities.Seller _assistedSale = (DomainAssistedSale.Entities.Seller)Session["Seller"];
+                    bool isAssistedSale = _assistedSale != null ? true : false;
+
+                    if (!isb2b && !isAssistedSale) 
+                    {
+                        if (!Request.Browser.IsMobileDevice) {
+                        <div class="ui right aligned one wide mobile three wide tablet three wide computer column">
+                            <div>
+                                <a href="/Customer/WishList"><i class="wishlist-heart" style="position: absolute;"></i></a>
+                                @{
+                                    if (Request.Cookies["WishList"] == null)
+                                    {
+                                        @Html.Action("LoadWishListCookie", "Customer")
+                                    }
+
+                                    List<DomainCustomer.Entities.Wishlist.WishlistItem>
+                                        wishList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DomainCustomer.Entities.Wishlist.WishlistItem>>(Request.Cookies["WishList"] != null ? HttpUtility.UrlDecode(Request.Cookies["WishList"].Value) : string.Empty);
+                                    int wishListItemsCount = wishList != null ? wishList.Count() : 0;
+                                }
+                                <a style="background: transparent" id="wishListCount" href="/Customer/WishList" class="ui circular label"></a>
+                            </div>
+                        </div>
+                        }
+                    }
+                }
+
+                <div class="ui left aligned one wide mobile one wide tablet one wide computer column">
+                    <div class="headerbar__user" title="Área do Cliente">
+                        <i class="user-login icon"></i>
+                        <div class="headerbar__dropdown">
+                            @Html.Partial("Common/_User") 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui left aligned two wide mobile one wide tablet one wide computer column">
+                    <div id="cartButton" class="ui labeled cartbutton no margin bottom @_classMiniCart" tabindex="0" data-segment="@(Session["segment"] != null ? Session["segment"] : "b2c")">
+                        <a>
+                            <i class="shopping-bag" style="position: absolute;"></i>
+                            <span>@(Session["idEventList"] == null && Session["EventList"] == null ? "" : "")</span>
+                        </a>
+                        <a class="ui circular label" id="total_itens_card" style="visibility: hidden;"></a>
+                    </div>
+                </div>
+
+                <div class="ui searchMobile mobile only">
+                    <div class="ui button icon centered">
+                        <i class="search icon"></i>
+                    </div>
+                    <div class="ui blocoBusca @_classSearch">
+                        <div class="ui input fluid blocoBuscaContainer">
+                            <input class="prompt" type="text" placeholder="Buscar...">
+                            <i class="search icon search-results"></i>
+                            <i class="close icon disabled" id="closeResultsMobile"></i>
+                        </div>
+                        <div class="results"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="topo-fixo">
+<div class="ui container fluid _header">
+    <div class="ui container">
+        <div class="ui middle aligned four column centered grid">
+            <div class="row">
+
+                @if (Request.Browser.IsMobileDevice) {
+                    <div class="ui center aligned four wide mobile six wide tablet nine wide computer column">
+                            @Html.Action("Menu", "Home")
+                    </div>
+                }
+
+                <div class="ui center aligned six wide mobile three wide tablet three wide computer column">              
+                    <a href="/Home" title="Página Inicial">
+                        <img class="ui middle aligned image logo" src="/assets/image/logo/logo.png" alt="@LojaCorp.Control.Company._Company.FantasyName" title="@LojaCorp.Control.Company._Company.FantasyName">
+                    </a>
+                </div>
+
+                @{
+
+                    if (!isb2b && !isAssistedSale) 
+                    {
+                        if (!Request.Browser.IsMobileDevice) {
+                        <div class="ui right aligned one wide mobile three wide tablet two wide computer column">
+                            <div>
+                                <a href="/Customer/WishList"><i class="wishlist-heart" style="position: absolute;"></i></a>
+                                @{
+                                    if (Request.Cookies["WishList"] == null)
+                                    {
+                                        @Html.Action("LoadWishListCookie", "Customer")
+                                    }
+
+                                    List<DomainCustomer.Entities.Wishlist.WishlistItem>
+                                        wishList = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DomainCustomer.Entities.Wishlist.WishlistItem>>(Request.Cookies["WishList"] != null ? HttpUtility.UrlDecode(Request.Cookies["WishList"].Value) : string.Empty);
+                                    int wishListItemsCount = wishList != null ? wishList.Count() : 0;
+                                }
+                                <a style="background: transparent" id="wishListCount" href="/Customer/WishList" class="ui circular label"></a>
+                            </div>
+                        </div>
+                        }
+                    }
+                }
+
+                <div class="ui left aligned one wide mobile one wide tablet one wide computer column">
+                        <div class="headerbar__user" title="Área do Cliente">
+                            <i class="user-login icon"></i>
+                            <div class="headerbar__dropdown">
+                                @Html.Partial("Common/_User") 
+                            </div>
+                        </div>
+                </div>
+
+                <div class="ui left aligned three wide mobile one wide tablet one wide computer column">
+                        <div id="cartButton" class="ui labeled cartbutton no margin bottom @_classMiniCart" tabindex="0" data-segment="@(Session["segment"] != null ? Session["segment"] : "b2c")">
+                            <a>
+                                <i class="shopping-bag" style="position: absolute;"></i>
+                                <span>@(Session["idEventList"] == null && Session["EventList"] == null ? "" : "")</span>
+                            </a>
+                            <a class="ui circular label" id="total_itens_card" style="visibility: hidden;"></a>
+                        </div>
+                </div>
+
+                <div class="ui searchMobile mobile only">
+                    <div class="ui button icon centered">
+                        <i class="search icon"></i>
+                    </div>
+                    <div class="ui blocoBusca @_classSearch">
+                        <div class="ui input fluid blocoBuscaContainer">
+                            <input class="prompt" type="text" placeholder="Buscar...">
+                            <i class="search icon search-results"></i>
+                            <i class="close icon disabled" id="closeResultsMobile"></i>
+                        </div>
+                        <div class="results"></div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+</div> *@
