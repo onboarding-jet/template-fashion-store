@@ -116,6 +116,19 @@
   box-shadow: none;
 }
 
+.area-restrita {
+  padding: 0;
+  margin: 0 !important;
+  width: 22x !important;
+  height: 22px !important;
+  background: url(/assets/image/icons/top-bar/lock.svg) center no-repeat;
+  background-size: contain;
+  color: transparent;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 .ui.divided.horizontal.list > .item {
   border-top: none;
   border-left: none;

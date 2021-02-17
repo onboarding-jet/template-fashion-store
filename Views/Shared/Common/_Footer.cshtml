@@ -4,6 +4,8 @@
 	whatsappNumber = "55" + System.Text.RegularExpressions.Regex.Replace(whatsappNumber, "[^0-9a-zA-Z]+", "");
 }
 
+@Html.Action("GetPrivacyPolicyAlertText", "Company")
+
 <div class="ui container fluid newsletter-bar">
     <div class="ui container">
         <div class="ui grid middle aligned">

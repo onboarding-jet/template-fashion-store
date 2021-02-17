@@ -208,11 +208,6 @@ $(document).ready(function () {
 
             variations.init()
         }
-        
-        
-        $(".discount-rules").on("click", function() {
-            $(".modal-discount-rules").modal("show")
-        })
 
     }();
 });
@@ -775,3 +770,10 @@ function alertSendStock() {
         }
     });
 }
+
+$(document).ready(function(){
+    
+    $('#abrirGuiaMedidas').click(function(){
+        $('.ui.modal.modalGuiaMedidas').modal('show')
+    });
+});

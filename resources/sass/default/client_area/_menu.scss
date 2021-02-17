@@ -1,27 +1,50 @@
+@media (min-width: 800px) {
+  .div.estilo.itens {
+      margin-right: 3%;
+      width: 22%;
+      height: 85px;
+      float: left;
+      margin-bottom: 3%;
+      border-radius: 7px;
+      border: 1px solid #dee8f2;
+
+      .icons-customer {
+        display: block;
+      }
+  }
+  .div.estilo.itens:hover {
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.95);
+  }
+}
+
+@media (max-width: 800px) {
+  .div.estilo.itens {
+      margin-right: 3%;
+      width: 80%;
+      height: 85px;
+      float: left;
+      margin-bottom: 3%;
+      border-radius: 7px;
+      border: 1px solid #dee8f2;
+
+      .icons-customer {
+        display: block;
+      }
+  }
+  .div.estilo.itens:hover {
+      cursor: pointer;
+      color: rgba(0, 0, 0, 0.95);
+  }
+}
+
+
 .menuclient {
   .item {
     .ui.icon {
       margin-right: 20px;
     }
   }
-
-  &.customerMenu {
-
-    .div.estilo.itens {
-      margin-right: 2%;
-      width: 17%;
-      height: 80px;
-      float: left;
-      margin-bottom: 3%;
-      border-radius: 7px;
-      border: 1px solid #dfe0e0;
-
-      .icons-customer {
-        display: block;
-      }
-    }
-  }    
-
       .ui.icon {
         @media screen and (max-width: $tablet-bp-min) {
           margin-right: 0px !important;
@@ -66,7 +89,7 @@
   }
 }
 
-.menuclient.customerMenu .div.estilo.itens:hover {
+.div.estilo.itens:hover {
   border: 1px solid #000000;
 }
 

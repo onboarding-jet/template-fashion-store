@@ -352,7 +352,6 @@
                     @Html.Action("BuyingTips", "Product", new { productID = @Model.IdProduct, skuID = SKUPadrao != null ? SKUPadrao.IdSku : 0 })
                     
                     <!--FIM DICA DE COMPRA-->
-                   
                    @Html.Partial("~/Views/Product/Details/_FlagDiscount.cshtml", Model)
                     <div class="row product-grid">
                         <div class="column blocoInfo">
